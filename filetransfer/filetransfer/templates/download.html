@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<center><h3>View My File</h3></center><hr>
+<div class="container"></div>
+<div class="container">
+    <table class="table-bordered" id="mytable">
+        <thead>
+            <tr>
+                <th>Sr.No</th>
+                <th>Uploading Data</th>
+
+                <th>Download</th>
+                <th>Filetype</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in hello %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{i.Uploading date}}</td>
+                <td><a href="{{i.uploadfile.url}}"Download>{{i.Uploadfile}}</a></td>
+                <td>{{i.Filetype}}</td>
+                <td>{{i.Description}}</td>
+            </tr>
+             {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock body %}
